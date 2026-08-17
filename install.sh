@@ -3,12 +3,12 @@
 GAME_DIR="$HOME/games/MinusBlinustorvalds"
 APP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons"
-ARCHIVE="$(dirname "$0")/-B-linux.7z"
+ARCHIVE="$(dirname "$0")/MinusBlinustorvalds.7z"
 TEMP_DIR="$(mktemp -d)"
 
 if [ ! -f "$ARCHIVE" ]; then
-    echo "No se encontró -B-linux.7z."
-    echo "Coloca install.sh y -B-linux.7z en la misma carpeta."
+    echo "No se encontró MinusBlinustorvalds.7z."
+    echo "Coloca install.sh y MinusBlinustorvalds.7z en la misma carpeta."
     exit 1
 fi
 
@@ -17,7 +17,7 @@ mkdir -p "$APP_DIR"
 mkdir -p "$ICON_DIR"
 
 7z x "$ARCHIVE" -o"$TEMP_DIR" >/dev/null || {
-    echo "Error al extraer -B-linux.7z."
+    echo "Error al extraer MinusBlinustorvalds.7z."
     rm -rf "$TEMP_DIR"
     exit 1
 }
