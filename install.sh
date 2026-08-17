@@ -3,12 +3,20 @@
 GAME_DIR="$HOME/games/MinusBlinustorvalds"
 APP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons"
-ARCHIVE="$(dirname "$0")/MinusBlinustorvalds.7z"
+SCRIPT_DIR="$(dirname "$0")"
+ARCHIVE="$SCRIPT_DIR/MinusBlinustorvalds.7z"
+ICON="$SCRIPT_DIR/-B.png"
 TEMP_DIR="$(mktemp -d)"
 
 if [ ! -f "$ARCHIVE" ]; then
     echo "No se encontró MinusBlinustorvalds.7z."
-    echo "Coloca install.sh y MinusBlinustorvalds.7z en la misma carpeta."
+    echo "Coloca MinusBlinustorvalds.7z, -B.png e install.sh en la misma carpeta."
+    exit 1
+fi
+
+if [ ! -f "$ICON" ]; then
+    echo "No se encontró -B.png."
+    echo "Coloca MinusBlinustorvalds.7z, -B.png e install.sh en la misma carpeta."
     exit 1
 fi
 
@@ -26,7 +34,7 @@ cp -r "$TEMP_DIR/"* "$GAME_DIR/"
 
 chmod +x "$GAME_DIR/-b linux.x86_64"
 
-cp "$GAME_DIR/-B.png" "$ICON_DIR/-B.png"
+cp "$ICON" "$ICON_DIR/-B.png"
 
 cat > "$APP_DIR/-b.desktop" <<EOF
 [Desktop Entry]
