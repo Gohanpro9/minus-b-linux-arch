@@ -1,5 +1,6 @@
 # DOWNLOAD ALL FILES FROM RELEASE AND CREATE "games" IN
 # YOUR HOME DIRECTORY OR ~/ AND MOVE ALL FILES IN "games"
-
-
+.
+.
+.
 # minus-b-linux-arch
