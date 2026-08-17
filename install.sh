@@ -30,7 +30,7 @@ mkdir -p "$ICON_DIR"
     exit 1
 }
 
-cp -r "$TEMP_DIR/"* "$GAME_DIR/"
+cp -r "$TEMP_DIR/MinusBlinustorvalds/"* "$GAME_DIR/"
 
 chmod +x "$GAME_DIR/-b linux.x86_64"
 
@@ -49,6 +49,10 @@ Categories=Game;
 EOF
 
 chmod +x "$APP_DIR/-b.desktop"
+
+rm -rf "$TEMP_DIR"
+
+echo "-B instalado correctamente."
 
 rm -rf "$TEMP_DIR"
 
